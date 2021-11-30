@@ -6,7 +6,7 @@ public class Teacher {
     private String type;
     private boolean alive;
     
-    private Teacher(){
+    public Teacher(){
         health = 30;
         attack = 5;
         type = "survivor";

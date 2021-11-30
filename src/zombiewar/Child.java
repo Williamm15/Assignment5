@@ -6,7 +6,7 @@ public class Child {
     private String type;
     private boolean alive;
     
-    private Child(){
+    public Child(){
         health = 30;
         attack = 5;
         type = "survivor";

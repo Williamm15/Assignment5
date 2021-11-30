@@ -6,7 +6,7 @@ public class CommonInfected{
     private String type;
     private boolean alive;
     
-    private CommonInfected(){
+    public CommonInfected(){
         health = 30;
         attack = 5;
         type = "zombie";
