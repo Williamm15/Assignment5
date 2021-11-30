@@ -6,7 +6,7 @@ public class Tank {
     private String type;
     private boolean alive;
     
-    private Tank(){
+    public Tank(){
         health = 30;
         attack = 5;
         type = "zombie";

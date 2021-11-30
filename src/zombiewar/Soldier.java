@@ -6,7 +6,7 @@ public class Soldier {
     private String type;
     private boolean alive;
     
-    private Soldier(){
+    public Soldier(){
         health = 30;
         attack = 5;
         type = "survivor";
