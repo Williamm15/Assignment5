@@ -7,8 +7,8 @@ public class Soldier {
     private boolean alive;
     
     public Soldier(){
-        health = 30;
-        attack = 5;
+        health = 100;
+        attack = 10;
         type = "survivor";
         alive = true;
     }

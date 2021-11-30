@@ -7,7 +7,7 @@ public class Teacher {
     private boolean alive;
     
     public Teacher(){
-        health = 30;
+        health = 50;
         attack = 5;
         type = "survivor";
         alive = true;

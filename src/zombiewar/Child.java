@@ -7,8 +7,8 @@ public class Child {
     private boolean alive;
     
     public Child(){
-        health = 30;
-        attack = 5;
+        health = 20;
+        attack = 2;
         type = "survivor";
         alive = true;
     }
