@@ -9,7 +9,7 @@ public class Child {
     private Child(){
         health = 30;
         attack = 5;
-        type = "zombie";
+        type = "survivor";
         alive = true;
     }
     public int getHealth(){
