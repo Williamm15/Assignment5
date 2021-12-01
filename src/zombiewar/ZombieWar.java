@@ -10,11 +10,10 @@ public class ZombieWar {
     public static Teacher[] teacherArray;
     public static Soldier[] soldierArray; 
     
-    public static int sumSize = 0;
     
     public static void main(String[] args) {
         populateArray();
-       
+        characterAttack();
         for(int i = 0; i < commonInfectedArray.length; i++){
             System.out.println(commonInfectedArray[i]);
         }
@@ -38,13 +37,42 @@ public class ZombieWar {
     }//end of main
     
     public static void characterAttack(){
-        
-        while(true){
-            for(int i = 0; i < sumSize; i++){
-                //if(character[i] = "zombie"){
-                //}
-            }//end of for loop
-            
+        int fightOrder = (int)(Math.random()); // picks either zombie or survivor to go first
+        while(true){ //while runs until all zombies or humans are dead
+            if (fightOrder == 0){
+                for(int i = 0; i < teacherArray.length; i++){
+                    for(int j = 0; j < commonInfectedArray.length; j++){
+                        commonInfectedArray[j].setHealth(teacherArray[i].getAttack());// Removing attack amount from health of commonInfected
+                        System.out.println("TEACHER ATTACK: " + teacherArray[i].getAttack()); // TESTING IF ATTACK WORKS 
+                        System.out.println("COMMON INFECTED HEALTH: " + commonInfectedArray[j].getHealth());// TESTING IF ATTACK WORKS
+                    }
+                    for(int j = 0; j < tankArray.length; j++){
+                        tankArray[j].setHealth(teacherArray[i].getAttack());// Removing attack amount from health of tank
+                    }
+                }
+                for(int i = 0; i < soldierArray.length; i++){
+                    // CODE FOR SOLDIER FIGHTING EACH ZOMBIE GOES HERE
+                }
+                for(int i = 0; i < childArray.length; i++){
+                    // CODE FOR CHILD FIGHTING EACH ZOMBIE GOES HERE
+                }
+                
+                // CODE FOR CHECKING IF ALL ZOMBIES ARE DEAD GOES HERE
+                
+                fightOrder = 1; // changing fightOrder so zombies attack next
+            }
+            else{
+                for(int i = 0; i < tankArray.length; i++){
+                    // CODE FOR TANK ATTACKING ALL HUMANS GOES HERE
+                }
+                for(int i = 0; i < commonInfectedArray.length; i++){
+                    // CODE FOR COMMON INFECTED ATTACKING ALL HUMANS GOES HERE
+                }
+                
+                // CODE FOR CHECKING IF ALL HUMANS ARE DEAD GOES HERE
+                
+                fightOrder = 0; // changing fightOrder so humans attack next
+            }//end of else 
         }//end of while loop 
     }//end of characterAttack() method 
     
@@ -52,10 +80,9 @@ public class ZombieWar {
         // generates the size of the array that will hold zombie and survivor objects 
         int[] randNums = new int[5];
         for(int i = 0; i < 5; i++){
-            int randomSize = 0 + (int)(Math.random()*15);
+            int randomSize = (int)(Math.random()*15);
             randNums[i] = randomSize;
-            sumSize += randomSize; 
-        }
+        }//end of for loop
         // assigning sizes
         childArray = new Child[randNums[0]];
         tankArray = new Tank[randNums[1]];
