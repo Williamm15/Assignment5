@@ -3,13 +3,19 @@ package zombiewar;
 public class Soldier {
     private int health;
     private int attack;
-    private String type;
     private boolean alive;
-    
+    private boolean hasPrinted = false;
+
+    public boolean getHasPrinted() {
+        return hasPrinted;
+    }
+
+    public void setHasPrinted(boolean hasPrinted) {
+        this.hasPrinted = hasPrinted;
+    }
     public Soldier(){
         health = 100;
         attack = 10;
-        type = "survivor";
         alive = true;
     }
     public int getHealth(){
@@ -17,9 +23,6 @@ public class Soldier {
     }
     public int getAttack(){
         return attack;
-    }
-    public String getType(){
-        return type;
     }
     public boolean getAlive(){
         return alive;
@@ -29,9 +32,6 @@ public class Soldier {
     }
     public void setAttack(int attack){
         this.attack = attack;
-    }
-    public void setType(String type){
-        this.type = type;
     }
     public void setAlive(boolean alive){
         this.alive = alive;

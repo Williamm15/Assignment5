@@ -3,13 +3,20 @@ package zombiewar;
 public class CommonInfected{
     private int health;
     private int attack;
-    private String type;
     private boolean alive;
+    private boolean hasPrinted = false; // toggles for death output
+
+    public boolean getHasPrinted() {
+        return hasPrinted;
+    }
+
+    public void setHasPrinted(boolean hasPrinted) {
+        this.hasPrinted = hasPrinted;
+    }
     
     public CommonInfected(){
         health = 30;
         attack = 5;
-        type = "zombie";
         alive = true;
     }
     public int getHealth(){
@@ -17,9 +24,6 @@ public class CommonInfected{
     }
     public int getAttack(){
         return attack;
-    }
-    public String getType(){
-        return type;
     }
     public boolean getAlive(){
         return alive;
@@ -29,9 +33,6 @@ public class CommonInfected{
     }
     public void setAttack(int attack){
         this.attack = attack;
-    }
-    public void setType(String type){
-        this.type = type;
     }
     public void setAlive(boolean alive){
         this.alive = alive;
