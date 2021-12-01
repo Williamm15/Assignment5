@@ -40,7 +40,7 @@ public class ZombieWar {
             }
         }
         
-        System.out.println("It seem " + survivorCount + " survivor have made it to safety");
+        System.out.println("It seems that " + survivorCount + " survivors have made it to safety.");
         
     }//end of main
     
