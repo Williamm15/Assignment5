@@ -7,8 +7,8 @@ public class Tank {
     private boolean alive;
     
     public Tank(){
-        health = 30;
-        attack = 5;
+        health = 150;
+        attack = 20;
         type = "zombie";
         alive = true;
     }
