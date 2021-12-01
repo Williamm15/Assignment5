@@ -25,15 +25,19 @@ public class Tank {
         return alive;
     }
     public void setHealth(int health){
-        this.health -= health;
+        this.health = health;
     }
     public void setAttack(int attack){
         this.attack = attack;
     }
-    public void setAttack(String type){
+    public void setType(String type){
         this.type = type;
     }
     public void setAlive(boolean alive){
         this.alive = alive;
+    }
+    
+    public void removeHealth(int health){
+        this.health -= health;
     }
 }
