@@ -17,7 +17,13 @@ public class ZombieWar {
     
     public static void main(String[] args) {
         populateArray();
-        System.out.println("We have "+ survivorCount + " survivors trying to make it to safety.\nBut there are " + zombieCount + " zombies waitiing for them.");
+        System.out.println("We have "+ survivorCount + " survivors trying to make it to safety (" 
+                + childArray.length + " children," 
+                + teacherArray.length + " teachers,"
+                + soldierArray.length + " soldiers)."
+                + "\nBut there are " + zombieCount + " zombies waitiing for them ("
+                + commonInfectedArray.length + " common infected, "
+                + tankArray.length + " tanks).");
         
         characterAttack();
         
@@ -39,8 +45,13 @@ public class ZombieWar {
                 survivorCount --;
             }
         }
+        if (survivorCount == 0){ // Checks if survivorCount is 0. Changes output if so
+            System.out.println("None of the survivors made it.");
+        }
+        else{
+            System.out.println("It seems that " + survivorCount + " survivors have made it to safety.");
+        }
         
-        System.out.println("It seems that " + survivorCount + " survivors have made it to safety.");
         
     }//end of main
     
@@ -65,6 +76,10 @@ public class ZombieWar {
                     if(aliveCheck == true){
                         anyCharacterAlive = true;
                     }
+                    else if (commonInfectedArray[j].getHasPrinted() == false){ // getHasPrinted() method toggles if death has been output
+                        System.out.println("Teacher " + i + " killed common infected " + j);
+                        commonInfectedArray[j].setHasPrinted(true);
+                    }
            }//end of if
         }
             for(int j = 0; j < tankArray.length; j++){
@@ -75,6 +90,11 @@ public class ZombieWar {
                     if(aliveCheck == true){
                         anyCharacterAlive = true;
                     }
+                    else if (tankArray[j].getHasPrinted() == false){
+                        System.out.println("Teacher " + i + " killed tank " + j);
+                        tankArray[j].setHasPrinted(true);
+                    }
+                    
                 }//end of if 
             }
         }//end of teacher attacking 
@@ -88,6 +108,11 @@ public class ZombieWar {
                     if(aliveCheck == true){
                         anyCharacterAlive = true;
                     }
+                    else if (commonInfectedArray[j].getHasPrinted() == false){
+                        System.out.println("Soldier " + i + " killed common infected " + j);
+                        commonInfectedArray[j].setHasPrinted(true);
+                    }
+                    
                 }//end of if
             }
             for(int j = 0; j < tankArray.length; j++){
@@ -98,6 +123,11 @@ public class ZombieWar {
                     if(aliveCheck == true){
                         anyCharacterAlive = true;
                     }
+                    else if (tankArray[j].getHasPrinted() == false){
+                        System.out.println("Soldier " + i + " killed tank " + j);
+                        tankArray[j].setHasPrinted(true);
+                    }
+                    
                 }//end of if 
             }
         }//end of soldier attacking
@@ -111,6 +141,10 @@ public class ZombieWar {
                     if(aliveCheck == true){
                         anyCharacterAlive = true;
                     }
+                    else if (commonInfectedArray[j].getHasPrinted() == false){
+                        System.out.println("Child " + i + " killed common infected " + j);
+                        commonInfectedArray[j].setHasPrinted(true);
+                    }
                 }//end of if
             }
             for(int j = 0; j < tankArray.length; j++){
@@ -120,6 +154,10 @@ public class ZombieWar {
                     tankArray[j].setAlive(aliveCheck);
                     if(aliveCheck == true){
                         anyCharacterAlive = true;
+                    }
+                    else if (tankArray[j].getHasPrinted() == false){
+                        System.out.println("Child " + i + " killed tank " + j);
+                        tankArray[j].setHasPrinted(true);
                     }
                 }//end of if 
             }
@@ -139,6 +177,10 @@ public class ZombieWar {
                 if(aliveCheck == true){
                     anyCharacterAlive = true;
                 }
+                else if (teacherArray[j].getHasPrinted() == false){
+                        System.out.println("Tank " + i + " killed teacher " + j);
+                        teacherArray[j].setHasPrinted(true);
+                }
             }
             
             for(int j = 0; j < soldierArray.length; j++){
@@ -148,6 +190,10 @@ public class ZombieWar {
                 if(aliveCheck == true){
                     anyCharacterAlive = true;
                 }
+                else if (soldierArray[j].getHasPrinted() == false){
+                        System.out.println("Tank " + i + " killed soldier " + j);
+                        soldierArray[j].setHasPrinted(true);
+                }
             }
             
             for(int j = 0; j < childArray.length; j++){
@@ -156,6 +202,10 @@ public class ZombieWar {
                 childArray[j].setAlive(aliveCheck);
                 if(aliveCheck == true){
                     anyCharacterAlive = true;
+                }
+                else if (childArray[j].getHasPrinted() == false){
+                        System.out.println("Tank " + i + " killed child " + j);
+                        childArray[j].setHasPrinted(true);
                 }
             }
             
@@ -169,6 +219,10 @@ public class ZombieWar {
                 if(aliveCheck == true){
                     anyCharacterAlive = true;
                 }
+                else if (teacherArray[j].getHasPrinted() == false){
+                        System.out.println("Common infected " + i + " killed teacher " + j);
+                        teacherArray[j].setHasPrinted(true);
+                }
             }
             
             for(int j = 0; j < soldierArray.length; j++){
@@ -178,6 +232,10 @@ public class ZombieWar {
                 if(aliveCheck == true){
                     anyCharacterAlive = true;
                 }
+                else if (soldierArray[j].getHasPrinted() == false){
+                        System.out.println("Common infected " + i + " killed soldier " + j);
+                        soldierArray[j].setHasPrinted(true);
+                }
             }
             
             for(int j = 0; j < childArray.length; j++){
@@ -186,6 +244,10 @@ public class ZombieWar {
                 childArray[j].setAlive(aliveCheck);
                 if(aliveCheck == true){
                     anyCharacterAlive = true;
+                }
+                else if (childArray[j].getHasPrinted() == false){
+                    System.out.println("Common infected " + i + " killed child " + j);
+                    childArray[j].setHasPrinted(true);
                 }
             }
         }
