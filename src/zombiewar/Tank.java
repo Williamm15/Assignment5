@@ -5,7 +5,8 @@ public class Tank {
     private int attack;
     private boolean alive;
     private boolean hasPrinted = false;
-
+    private String weapon;
+    
     public boolean getHasPrinted() {
         return hasPrinted;
     }

@@ -5,7 +5,8 @@ public class CommonInfected{
     private int attack;
     private boolean alive;
     private boolean hasPrinted = false; // toggles for death output
-
+    private String weapon;
+    
     public boolean getHasPrinted() {
         return hasPrinted;
     }
@@ -41,4 +42,5 @@ public class CommonInfected{
     public void removeHealth(int health){
         this.health -= health;
     }
+
 }
